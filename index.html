@@ -143,8 +143,8 @@
   /* Services */
   .services{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}
   .service{background:var(--surface);border:1px solid var(--line);border-radius:var(--radius);padding:22px}
-  .service-inquire{display:inline-block;margin-top:12px;color:var(--accent);font-size:.92rem;font-weight:600;text-decoration:underline;text-underline-offset:4px}
-  .service-inquire:hover{color:var(--text)}
+  .service-inquire,.subject-inquire{display:inline-block;margin-top:12px;color:var(--accent);font-size:.92rem;font-weight:600;text-decoration:underline;text-underline-offset:4px}
+  .service-inquire:hover,.subject-inquire:hover{color:var(--text)}
   .service h3{font-size:1.1rem;font-weight:600;color:var(--text)}
   .service p{color:var(--muted);font-size:.9rem;direction:ltr;text-align:start}
   html[lang="ar"] .service p{text-align:right}
@@ -313,38 +313,56 @@
       <div class="subject">
         <h3><span data-lang="ar">التعويضات السنية</span><span data-lang="en">Prosthodontics</span></h3>
         <p><span data-lang="ar">Prosthodontics</span><span data-lang="en">التعويضات السنية</span></p>
+      
+        <a class="subject-inquire" href="#contact" data-subject-ar="التعويضات السنية" data-subject-en="Prosthodontics"><span data-lang="ar">استفسر عن هذه المادة</span><span data-lang="en">Ask about this subject</span></a>
       </div>
       <div class="subject">
         <h3><span data-lang="ar">أمراض اللثة</span><span data-lang="en">Periodontics</span></h3>
         <p><span data-lang="ar">Periodontics</span><span data-lang="en">أمراض اللثة</span></p>
+      
+        <a class="subject-inquire" href="#contact" data-subject-ar="أمراض اللثة" data-subject-en="Periodontics"><span data-lang="ar">استفسر عن هذه المادة</span><span data-lang="en">Ask about this subject</span></a>
       </div>
       <div class="subject">
         <h3><span data-lang="ar">طب أسنان الأطفال</span><span data-lang="en">Pedodontics</span></h3>
         <p><span data-lang="ar">Pedodontics</span><span data-lang="en">طب أسنان الأطفال</span></p>
+      
+        <a class="subject-inquire" href="#contact" data-subject-ar="طب أسنان الأطفال" data-subject-en="Pediatric dentistry"><span data-lang="ar">استفسر عن هذه المادة</span><span data-lang="en">Ask about this subject</span></a>
       </div>
       <div class="subject">
         <h3><span data-lang="ar">علاج العصب</span><span data-lang="en">Endodontics</span></h3>
         <p><span data-lang="ar">Endodontics</span><span data-lang="en">علاج العصب</span></p>
+      
+        <a class="subject-inquire" href="#contact" data-subject-ar="علاج العصب" data-subject-en="Endodontics"><span data-lang="ar">استفسر عن هذه المادة</span><span data-lang="en">Ask about this subject</span></a>
       </div>
       <div class="subject">
         <h3><span data-lang="ar">جراحة الفم</span><span data-lang="en">Oral surgery</span></h3>
         <p><span data-lang="ar">Oral surgery</span><span data-lang="en">جراحة الفم</span></p>
+      
+        <a class="subject-inquire" href="#contact" data-subject-ar="جراحة الفم" data-subject-en="Oral surgery"><span data-lang="ar">استفسر عن هذه المادة</span><span data-lang="en">Ask about this subject</span></a>
       </div>
       <div class="subject">
         <h3><span data-lang="ar">طب الفم</span><span data-lang="en">Oral medicine</span></h3>
         <p><span data-lang="ar">Oral medicine</span><span data-lang="en">طب الفم</span></p>
+      
+        <a class="subject-inquire" href="#contact" data-subject-ar="طب الفم" data-subject-en="Oral medicine"><span data-lang="ar">استفسر عن هذه المادة</span><span data-lang="en">Ask about this subject</span></a>
       </div>
       <div class="subject">
         <h3><span data-lang="ar">أمراض الفم (الباثولوجيا)</span><span data-lang="en">Oral pathology</span></h3>
         <p><span data-lang="ar">Oral pathology</span><span data-lang="en">أمراض الفم (الباثولوجيا)</span></p>
+      
+        <a class="subject-inquire" href="#contact" data-subject-ar="أمراض الفم (الباثولوجيا)" data-subject-en="Oral pathology"><span data-lang="ar">استفسر عن هذه المادة</span><span data-lang="en">Ask about this subject</span></a>
       </div>
       <div class="subject">
         <h3><span data-lang="ar">بيولوجيا الفم</span><span data-lang="en">Oral biology</span></h3>
         <p><span data-lang="ar">Oral biology</span><span data-lang="en">بيولوجيا الفم</span></p>
+      
+        <a class="subject-inquire" href="#contact" data-subject-ar="بيولوجيا الفم" data-subject-en="Oral biology"><span data-lang="ar">استفسر عن هذه المادة</span><span data-lang="en">Ask about this subject</span></a>
       </div>
       <div class="subject">
         <h3><span data-lang="ar">طب الأسنان الترميمي</span><span data-lang="en">Restorative dentistry</span></h3>
         <p><span data-lang="ar">Restorative dentistry</span><span data-lang="en">طب الأسنان الترميمي</span></p>
+      
+        <a class="subject-inquire" href="#contact" data-subject-ar="طب الأسنان الترميمي" data-subject-en="Restorative dentistry"><span data-lang="ar">استفسر عن هذه المادة</span><span data-lang="en">Ask about this subject</span></a>
       </div>
     </div>
   </div>
@@ -484,6 +502,19 @@
     });
   });
 
+  /* Prepare a subject-specific message before the visitor chooses a contact channel. */
+  document.querySelectorAll(".subject-inquire").forEach(link => {
+    link.addEventListener("click", () => {
+      const language = html.lang === "en" ? "en" : "ar";
+      const subject = link.getAttribute(`data-subject-${language}`);
+      const message = language === "ar"
+        ? `مرحباً دكتور أمجد، حاب أستفسر عن دروس مادة ${subject}.`
+        : `Hello Dr. Amjad, I would like to ask about tutoring for ${subject}.`;
+      const emailSubject = language === "ar" ? `استفسار عن دروس ${subject}` : `Question about tutoring: ${subject}`;
+      document.querySelector("[data-contact=whatsapp]").href = `https://wa.me/971521260012?text=${encodeURIComponent(message)}`;
+      document.querySelector("[data-contact=email]").href = `mailto:dramjad.dentist23@gmail.com?subject=${encodeURIComponent(emailSubject)}&body=${encodeURIComponent(message)}`;
+    });
+  });
   /* ---------- Language toggle (runs last, after everything above exists) ---------- */
   function setLang(l){
     html.lang = l;
@@ -501,6 +532,7 @@
 </script>
 </body>
 </html>
+
 
 
 
